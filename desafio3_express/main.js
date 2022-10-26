@@ -15,9 +15,9 @@ app.get('/productos', async (peticion, respuesta) => {
 
 app.get('/productoRandom', async (peticion, respuesta) => {
     const productos = await contenedor.getAll();
-    let number = Math.floor(Math.random() * productos.length);
-    const producto = await productos.getById(number + 1);
-    respuesta.send(producto)
+    const number = Math.floor(Math.random() * productos.length);
+    const randomProduct = await contenedor.getById(number + 1);
+    respuesta.json(randomProduct); 
 })
 
 const server = app.listen(PORT, () =>{
@@ -25,3 +25,4 @@ const server = app.listen(PORT, () =>{
 });
 
 server.on('error', error => console.log(`Error: ${error}`));
+
