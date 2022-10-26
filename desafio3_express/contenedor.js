@@ -100,8 +100,6 @@ class Contenedor {
     }
 
     async getAll() {
-
-
         try {
             if (this.exists(this.archivo)) {
                 console.log(`Leyendo archivo...`);
@@ -133,8 +131,6 @@ class Contenedor {
                 console.log(`Buscando producto con el id solicitado...`);
                 if (data.some(item => item.id === id)) {
                     const data = await this.readFile(this.archivo);
-
-                    /* elimino producto */
 
                     console.log(`Eliminando producto con id solicitado...`);
                     const datos = data.filter(item => item.id !== id);
