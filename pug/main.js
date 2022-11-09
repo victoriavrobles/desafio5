@@ -1,18 +1,15 @@
-//Servidor************
 const express = require('express');
 const aplicacion = express();
 
 const port = 8080;
 
-//Lineas para usar json
 aplicacion.use(express.json());
 aplicacion.use(express.urlencoded({ extended: true }));
 
 aplicacion.set('views', __dirname + '/views'); 
 aplicacion.set('view engine', 'pug'); 
-//***** Hacemos la carpeta public visible
+
 aplicacion.use('/static', express.static(__dirname + '/public'));
-//****************
 
 class Contenedor {
   constructor(productos) {
@@ -80,8 +77,6 @@ class Contenedor {
 
 const productos = new Contenedor([]);
 
-//Endpoints***
-
 aplicacion.get('/productos', (peticion, respuesta) => {
   const listaProductos = productos.getAll();
   respuesta.render('lista', {
@@ -99,13 +94,9 @@ aplicacion.get('/', (peticion, respuesta) => {
   respuesta.render('formulario', {});
 });
 
-//***********
 
-
-//Servidor************
 const servidor = aplicacion.listen(port, () => {
   console.log(`Servidor escuchando: ${servidor.address().port}`);
 });
 
 servidor.on('error', error => console.log(`Error: ${error}`));
-//****************
