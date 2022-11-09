@@ -1,12 +1,20 @@
-<a href="/productos">Ir a la lista -></a>
-<h1>Ingrese producto: </h1>
+<button type="button" class="btn btn-outline-dark"><a href="/productos">Ir a la lista -></a></button>
+<h1 class="my-3">Ingrese producto: </h1>
 <form action="/productos" method="post">
-  <label for="title">Titulo:</label>
-  <input type="text" id="title" name="title"><br><br>
-  <label for="price">Precio:</label>
-  <input type="text" id="price" name="price"><br><br>
-  <label for="thumbnail">Foto URL:</label>
-  <input type="text" id="thumbnail" name="thumbnail"><br><br>
+  <div class="input-group mb-3 flex-nowrap">
+    <span class="input-group-text" id="inputGroup-sizing-default">Titulo</span>
+    <input type="text" id="title" name="title" class="form-control" aria-label="Titulo" aria-describedby="inputGroup-sizing-default">
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Precio</span>
+    <input type="text" id="price" name="price" class="form-control" aria-label="precio" aria-describedby="inputGroup-sizing-default">
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Foto URL:</span>
+    <input type="text" id="thumbnail" name="thumbnail" class="form-control" aria-label="thumbnail" aria-describedby="inputGroup-sizing-default">
+  </div>
   <input type="submit" value="Enviar">
 </form>
 <br>

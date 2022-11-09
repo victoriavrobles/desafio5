@@ -1,24 +1,28 @@
 
 html 
-  body 
-    a(
-      href="/productos"
-    )='Ir a la lista ->'
+  head 
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css', rel='stylesheet'
+    integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi', crossorigin='anonymous')
+  body(class="m-5")
+    button(type="button" class="btn btn-outline-dark")
+      a(
+        href="/productos"
+      )='Ir a la lista ->'
     h1='Ingrese producto'
     form(
       action="/productos"
       method="post"
     )
       label(for="title")='Titulo:'
-      input(type = "text" id="title" name="title")
+      input(type = "text" id="title" name="title" class="form-control")
       br
       br
       label(for="price")='Precio:'
-      input(type = "text" id="price" name="price")
+      input(type = "text" id="price" name="price" class="form-control")
       br
       br
       label(for="thumbnail")='Imagen URL:'
-      input(type = "text" id="thumbnail" name="thumbnail")
+      input(type = "text" id="thumbnail" name="thumbnail" class="form-control")
       br
       br
       input(type="submit" value="Enviar")
